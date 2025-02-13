@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <title>My Web AR</title>
+</head>
+<body>
+    <h1>Web AR テスト</h1>
+    <model-viewer 
+        src="snowman.glb"  <!-- ここをアップロードしたGLBのファイル名に変更 -->
+        ar ar-modes="webxr scene-viewer quick-look"
+        camera-controls auto-rotate>
+    </model-viewer>
+</body>
+</html>
