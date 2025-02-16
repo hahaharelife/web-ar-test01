@@ -8,13 +8,15 @@
 </head>
 <body>
     <h1>Web AR テスト</h1>
-<model-viewer 
-  src="model_v3.glb"
-  ar ar-modes="webxr scene-viewer quick-look"
-  camera-controls auto-rotate
-  tone-mapping="aces"
-  exposure="1.0"
-  shadow-intensity="1">
+<model-viewer src="model_v3.glb"
+              ar ar-modes="webxr scene-viewer quick-look"
+              camera-controls auto-rotate
+              tone-mapping="aces"
+              shadow-intensity="1"
+              environment-image="legacy"
+              exposure="1.2"
+              poster="poster.webp"
+              skybox-color="white">
 </model-viewer>
 </body>
 </html>
