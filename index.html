@@ -4,19 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <title>My Web AR</title>
+    <title>青龍を召喚 - ARフォトスポット</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        .instructions {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .ar-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .ar-button {
+            background-color: #FF4500;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Web AR テスト</h1>
-<model-viewer src="seiryu_v01ar.glb"
-    ar ar-modes="webxr scene-viewer quick-look"
-    camera-controls auto-rotate
-    tone-mapping="aces"
-    shadow-intensity="1"
-    environment-image="neutral"
-    exposure="1.0"
-    poster="poster.webp"
-    skybox-color="white">
-</model-viewer>
+
+    <h1>📸 青龍を召喚 - ARフォトスポット</h1>
+    <p class="instructions">
+        📍 このボタンを押して、青龍を背景にして写真を撮ろう！<br>
+        📸 Tap the button to summon the dragon and take a photo!<br>
+        📷 按下按钮召唤鬼怪并拍照！<br>
+        📸 버튼을 눌러 귀신을 소환하고 사진을 찍으세요!
+    </p>
+
+    <div class="ar-container">
+        <model-viewer 
+            src="seiryu_v01ar.glb"
+            ar ar-modes="webxr scene-viewer quick-look"
+            placement="floor"
+            camera-controls
+            auto-rotate
+            camera-orbit="0deg 75deg 2m"
+            camera-target="0m 1.5m -1m"
+            tone-mapping="aces"
+            shadow-intensity="1"
+            environment-image="neutral"
+            skybox-color="white"
+            exposure="1.2">
+        </model-viewer>
+        <a class="ar-button" href="javascript:document.querySelector('model-viewer').activateAR();">
+            📸 ARで撮影する
+        </a>
+    </div>
+
 </body>
 </html>
